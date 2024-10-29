@@ -10,17 +10,21 @@ import {
 } from '../index.js'
 
 await describe('to-millis/units', async () => {
-  await it('Declares all units in lower case', () => {
-    const units = [
-      ...durationUnitsDays,
-      ...durationUnitsHours,
-      ...durationUnitsMinutes,
-      ...durationUnitsSeconds,
-      ...durationUnitsMilliseconds
-    ]
+  const allUnits = [
+    ...durationUnitsDays,
+    ...durationUnitsHours,
+    ...durationUnitsMinutes,
+    ...durationUnitsSeconds,
+    ...durationUnitsMilliseconds
+  ]
 
-    for (const unit of units) {
+  await it('Declares all units in lower case', () => {
+    for (const unit of allUnits) {
       assert.strictEqual(unit.toLowerCase(), unit)
     }
+  })
+
+  await it('Has no duplicated units', () => {
+    assert.strictEqual(allUnits.length, new Set(allUnits).size)
   })
 })
