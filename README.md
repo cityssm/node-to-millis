@@ -1,4 +1,10 @@
-# node-to-millis
+# To Millis
+
+[![npm (scoped)](https://img.shields.io/npm/v/%40cityssm/to-millis)](https://www.npmjs.com/package/@cityssm/to-millis)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f54c62ed55fd7808d702/maintainability)](https://codeclimate.com/github/cityssm/node-to-millis/maintainability)
+[![DeepSource](https://app.deepsource.com/gh/cityssm/node-to-millis.svg/?label=active+issues&show_trend=true&token=vdC-xiKDTyi_oc8iVTIQMGG3)](https://app.deepsource.com/gh/cityssm/node-to-millis/)
+[![codecov](https://codecov.io/gh/cityssm/node-to-millis/graph/badge.svg?token=TT03DLHCEQ)](https://codecov.io/gh/cityssm/node-to-millis)
+[![Coverage Testing](https://github.com/cityssm/node-to-millis/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/node-to-millis/actions/workflows/coverage.yml)
 
 Increases the readability of millisecond values in JavaScript.
 
