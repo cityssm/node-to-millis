@@ -6,7 +6,7 @@ export const durationUnitsDays = ['days', 'day', 'd'] as const
 /**
  * Acceptable "hour" unit values
  */
-export const durationUnitsHours = ['hours', 'hour', 'h'] as const
+export const durationUnitsHours = ['hours', 'hour', 'hr', 'h'] as const
 
 /**
  * Acceptable "minute" unit values

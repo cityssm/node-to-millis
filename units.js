@@ -5,7 +5,7 @@ export const durationUnitsDays = ['days', 'day', 'd'];
 /**
  * Acceptable "hour" unit values
  */
-export const durationUnitsHours = ['hours', 'hour', 'h'];
+export const durationUnitsHours = ['hours', 'hour', 'hr', 'h'];
 /**
  * Acceptable "minute" unit values
  */

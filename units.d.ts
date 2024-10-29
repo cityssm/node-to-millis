@@ -5,7 +5,7 @@ export declare const durationUnitsDays: readonly ["days", "day", "d"];
 /**
  * Acceptable "hour" unit values
  */
-export declare const durationUnitsHours: readonly ["hours", "hour", "h"];
+export declare const durationUnitsHours: readonly ["hours", "hour", "hr", "h"];
 /**
  * Acceptable "minute" unit values
  */
