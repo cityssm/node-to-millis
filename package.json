@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/cityssm/node-to-millis#readme",
   "devDependencies": {
-    "@types/node": "^22.8.1",
+    "@types/node": "^22.8.2",
     "eslint-config-cityssm": "^14.0.2",
     "prettier-config-cityssm": "^1.0.0"
   }
