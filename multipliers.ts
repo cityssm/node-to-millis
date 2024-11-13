@@ -1,19 +1,34 @@
 /**
- * Number of milliseconds in one day
+ * Number of seconds in one minute
  */
-export const durationMultiplierDays = 86_400_000
+export const secondsInOneMinute = 60
 
 /**
- * Number of milliseconds in one hour
+ * Number of seconds in one hour
  */
-export const durationMultiplierHours = 3_600_000
+export const secondsInOneHour = secondsInOneMinute * 60
 
 /**
- * Number of milliseconds in one minute
+ * Number of seconds in one day
  */
-export const durationMultiplierMinutes = 60_000
+export const secondsInOneDay = secondsInOneHour * 24
 
 /**
  * Number of milliseconds in one second
  */
-export const durationMultiplierSeconds = 1000
+export const millisecondsInOneSecond = 1000
+
+/**
+ * Number of milliseconds in one minute
+ */
+export const millisecondsInOneMinute = secondsInOneMinute * millisecondsInOneSecond
+
+/**
+ * Number of milliseconds in one hour
+ */
+export const millisecondsInOneHour = secondsInOneHour * millisecondsInOneSecond
+
+/**
+ * Number of milliseconds in one day
+ */
+export const millisecondsInOneDay = secondsInOneDay * millisecondsInOneSecond

@@ -1,8 +1,11 @@
 import {
-  durationMultiplierDays,
-  durationMultiplierHours,
-  durationMultiplierMinutes,
-  durationMultiplierSeconds
+  millisecondsInOneDay,
+  millisecondsInOneHour,
+  millisecondsInOneMinute,
+  millisecondsInOneSecond,
+  secondsInOneDay,
+  secondsInOneHour,
+  secondsInOneMinute
 } from './multipliers.js'
 import {
   type DurationUnit,
@@ -92,12 +95,90 @@ export default function toMillis(
 }
 
 /**
+ * Converts a duration amount and duration unit into seconds.
+ * @param durationAmount - Duration amount.
+ * @param durationUnit - Duration unit.
+ * @returns Total number of seconds.
+ */
+export function toSeconds(
+  durationAmount: number,
+  durationUnit:
+    | DurationUnit
+    | Uppercase<DurationUnit>
+    | Capitalize<DurationUnit>
+): number {
+  const durationUnitLowerCase = durationUnit.toLowerCase() as DurationUnit
+
+  /*
+   * Days
+   */
+
+  if (
+    (durationUnitsDays as unknown as string[]).includes(durationUnitLowerCase)
+  ) {
+    return daysToSeconds(durationAmount)
+  }
+
+  /*
+   * Hours
+   */
+
+  if (
+    (durationUnitsHours as unknown as string[]).includes(durationUnitLowerCase)
+  ) {
+    return hoursToSeconds(durationAmount)
+  }
+
+  /*
+   * Minutes
+   */
+
+  if (
+    (durationUnitsMinutes as unknown as string[]).includes(
+      durationUnitLowerCase
+    )
+  ) {
+    return minutesToSeconds(durationAmount)
+  }
+
+  /*
+   * Seconds
+   */
+
+  if (
+    (durationUnitsSeconds as unknown as string[]).includes(
+      durationUnitLowerCase
+    )
+  ) {
+    return durationAmount
+  }
+
+  /*
+   * Milliseconds
+   */
+
+  if (
+    (durationUnitsMilliseconds as unknown as string[]).includes(
+      durationUnitLowerCase
+    )
+  ) {
+    return durationAmount / millisecondsInOneSecond
+  }
+
+  /*
+   * Unknown unit, throw error
+   */
+
+  throw new Error(`Unknown durationUnit: ${durationUnit}`)
+}
+
+/**
  * Converts seconds to milliseconds.
  * @param durationSeconds - Duration seconds.
  * @returns Total number of milliseconds.
  */
 export function secondsToMillis(durationSeconds: number): number {
-  return durationSeconds * durationMultiplierSeconds
+  return durationSeconds * millisecondsInOneSecond
 }
 
 /**
@@ -106,7 +187,16 @@ export function secondsToMillis(durationSeconds: number): number {
  * @returns Total number of milliseconds.
  */
 export function minutesToMillis(durationMinutes: number): number {
-  return durationMinutes * durationMultiplierMinutes
+  return durationMinutes * millisecondsInOneMinute
+}
+
+/**
+ * Converts minutes to seconds.
+ * @param durationMinutes - Duration minutes.
+ * @returns Total number of seconds.
+ */
+export function minutesToSeconds(durationMinutes: number): number {
+  return durationMinutes * secondsInOneMinute
 }
 
 /**
@@ -115,7 +205,16 @@ export function minutesToMillis(durationMinutes: number): number {
  * @returns Total number of milliseconds.
  */
 export function hoursToMillis(durationHours: number): number {
-  return durationHours * durationMultiplierHours
+  return durationHours * millisecondsInOneHour
+}
+
+/**
+ * Converts hours to seconds.
+ * @param durationHours - Duration hours.
+ * @returns Total number of seconds.
+ */
+export function hoursToSeconds(durationHours: number): number {
+  return durationHours * secondsInOneHour
 }
 
 /**
@@ -124,14 +223,26 @@ export function hoursToMillis(durationHours: number): number {
  * @returns Total number of milliseconds.
  */
 export function daysToMillis(durationDays: number): number {
-  return durationDays * durationMultiplierDays
+  return durationDays * millisecondsInOneDay
+}
+
+/**
+ * Converts days to seconds.
+ * @param durationDays - Duration days.
+ * @returns Total number of seconds.
+ */
+export function daysToSeconds(durationDays: number): number {
+  return durationDays * secondsInOneDay
 }
 
 export {
-  durationMultiplierDays,
-  durationMultiplierHours,
-  durationMultiplierMinutes,
-  durationMultiplierSeconds
+  millisecondsInOneDay,
+  millisecondsInOneHour,
+  millisecondsInOneMinute,
+  millisecondsInOneSecond,
+  secondsInOneDay,
+  secondsInOneHour,
+  secondsInOneMinute
 } from './multipliers.js'
 
 export {

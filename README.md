@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/cityssm/node-to-millis/graph/badge.svg?token=TT03DLHCEQ)](https://codecov.io/gh/cityssm/node-to-millis)
 [![Coverage Testing](https://github.com/cityssm/node-to-millis/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/node-to-millis/actions/workflows/coverage.yml)
 
-Increases the readability of millisecond values in JavaScript.
+Increases the readability of millisecond (and second) values in JavaScript.
 
 Handy when used with functions like `setTimeout()` and `setInterval()` to provide easy-to-read durations,
 or when adding to times represented in milliseconds.
@@ -42,12 +42,17 @@ const twoHoursFromNow = Date.now() + 2 * 60 * 60 * 1000
 
 ## More Exports
 
+- `toSeconds(durationAmount, durationUnit)`
+
 Functions without units:
 
 - `daysToMillis(durationDays)`
 - `hoursToMillis(durationHours)`
 - `minutesToMillis(durationMinutes)`
 - `secondsToMillis(durationSeconds)`
+- `daysToSeconds(durationDays)`
+- `hoursToSeconds(durationHours)`
+- `minutesToSeconds(durationMinutes)`
 
 Arrays of acceptable units:
 
@@ -59,7 +64,10 @@ Arrays of acceptable units:
 
 Multipliers used for calculations:
 
-- `durationMultiplierDays`
-- `durationMultiplierHours`
-- `durationMultiplierMinutes`
-- `durationMultiplierSeconds`
+- `millisecondsInOneDay`
+- `millisecondsInOneHour`
+- `millisecondsInOneMinute`
+- `millisecondsInOneSecond`
+- `secondsInOneDay`
+- `secondsInOneHour`
+- `secondsInOneMinute`

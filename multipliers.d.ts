@@ -1,16 +1,28 @@
 /**
- * Number of milliseconds in one day
+ * Number of seconds in one minute
  */
-export declare const durationMultiplierDays = 86400000;
+export declare const secondsInOneMinute = 60;
 /**
- * Number of milliseconds in one hour
+ * Number of seconds in one hour
  */
-export declare const durationMultiplierHours = 3600000;
+export declare const secondsInOneHour: number;
 /**
- * Number of milliseconds in one minute
+ * Number of seconds in one day
  */
-export declare const durationMultiplierMinutes = 60000;
+export declare const secondsInOneDay: number;
 /**
  * Number of milliseconds in one second
  */
-export declare const durationMultiplierSeconds = 1000;
+export declare const millisecondsInOneSecond = 1000;
+/**
+ * Number of milliseconds in one minute
+ */
+export declare const millisecondsInOneMinute: number;
+/**
+ * Number of milliseconds in one hour
+ */
+export declare const millisecondsInOneHour: number;
+/**
+ * Number of milliseconds in one day
+ */
+export declare const millisecondsInOneDay: number;
