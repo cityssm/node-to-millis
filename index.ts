@@ -3,11 +3,11 @@ import {
   daysToSeconds,
   hoursToMillis,
   hoursToSeconds,
+  millisToSeconds,
   minutesToMillis,
   minutesToSeconds,
   secondsToMillis
 } from './calculations.js'
-import { millisecondsInOneSecond } from './multipliers.js'
 import {
   type DurationUnit,
   durationUnitsDays,
@@ -163,7 +163,7 @@ export function toSeconds(
       durationUnitLowerCase
     )
   ) {
-    return durationAmount / millisecondsInOneSecond
+    return millisToSeconds(durationAmount)
   }
 
   /*
@@ -180,6 +180,7 @@ export {
   hoursToSeconds,
   minutesToMillis,
   minutesToSeconds,
+  millisToSeconds,
   secondsToMillis
 } from './calculations.js'
 

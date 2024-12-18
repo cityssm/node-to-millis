@@ -9,6 +9,15 @@ import {
 } from './multipliers.js'
 
 /**
+ * Converts milliseconds to seconds.
+ * @param durationMillis - Duration milliseconds.
+ * @returns Total number of seconds.
+ */
+export function millisToSeconds(durationMillis: number): number {
+  return durationMillis / millisecondsInOneSecond
+}
+
+/**
  * Converts seconds to milliseconds.
  * @param durationSeconds - Duration seconds.
  * @returns Total number of milliseconds.

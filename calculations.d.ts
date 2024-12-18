@@ -1,4 +1,10 @@
 /**
+ * Converts milliseconds to seconds.
+ * @param durationMillis - Duration milliseconds.
+ * @returns Total number of seconds.
+ */
+export declare function millisToSeconds(durationMillis: number): number;
+/**
  * Converts seconds to milliseconds.
  * @param durationSeconds - Duration seconds.
  * @returns Total number of milliseconds.

@@ -1,5 +1,4 @@
-import { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, minutesToMillis, minutesToSeconds, secondsToMillis } from './calculations.js';
-import { millisecondsInOneSecond } from './multipliers.js';
+import { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, millisToSeconds, minutesToMillis, minutesToSeconds, secondsToMillis } from './calculations.js';
 import { durationUnitsDays, durationUnitsHours, durationUnitsMilliseconds, durationUnitsMinutes, durationUnitsSeconds } from './units.js';
 /**
  * Converts a duration amount and duration unit into milliseconds.
@@ -80,13 +79,13 @@ export function toSeconds(durationAmount, durationUnit) {
      * Milliseconds
      */
     if (durationUnitsMilliseconds.includes(durationUnitLowerCase)) {
-        return durationAmount / millisecondsInOneSecond;
+        return millisToSeconds(durationAmount);
     }
     /*
      * Unknown unit, throw error
      */
     throw new Error(`Unknown durationUnit: ${durationUnit}`);
 }
-export { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, minutesToMillis, minutesToSeconds, secondsToMillis } from './calculations.js';
+export { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, minutesToMillis, minutesToSeconds, millisToSeconds, secondsToMillis } from './calculations.js';
 export { millisecondsInOneDay, millisecondsInOneHour, millisecondsInOneMinute, millisecondsInOneSecond, secondsInOneDay, secondsInOneHour, secondsInOneMinute } from './multipliers.js';
 export { durationUnitsDays, durationUnitsHours, durationUnitsMilliseconds, durationUnitsMinutes, durationUnitsSeconds } from './units.js';
