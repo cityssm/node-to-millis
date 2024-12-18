@@ -53,6 +53,7 @@ Functions without units:
 - `daysToSeconds(durationDays)`
 - `hoursToSeconds(durationHours)`
 - `minutesToSeconds(durationMinutes)`
+- `millisToSeconds(durationMillis)`
 
 Arrays of acceptable units:
 
