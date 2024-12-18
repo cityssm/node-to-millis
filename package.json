@@ -1,7 +1,7 @@
 {
   "name": "@cityssm/to-millis",
   "type": "module",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Increases the readability of millisecond (and second) values in JavaScript.",
   "exports": "./index.js",
   "scripts": {
