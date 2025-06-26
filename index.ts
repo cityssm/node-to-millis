@@ -22,22 +22,23 @@ import {
  * @param durationAmount - Duration amount.
  * @param durationUnit - Duration unit.
  * @returns Total number of milliseconds.
+ * @throws {Error} If the duration unit is unknown.
  */
 export default function toMillis(
   durationAmount: number,
   durationUnit:
+    | Capitalize<DurationUnit>
     | DurationUnit
     | Uppercase<DurationUnit>
-    | Capitalize<DurationUnit>
 ): number {
-  const durationUnitLowerCase = durationUnit.toLowerCase() as DurationUnit
+  const durationUnitLowerCase = durationUnit.toLowerCase()
 
   /*
    * Days
    */
 
   if (
-    (durationUnitsDays as unknown as string[]).includes(durationUnitLowerCase)
+    (durationUnitsDays as readonly string[]).includes(durationUnitLowerCase)
   ) {
     return daysToMillis(durationAmount)
   }
@@ -47,7 +48,7 @@ export default function toMillis(
    */
 
   if (
-    (durationUnitsHours as unknown as string[]).includes(durationUnitLowerCase)
+    (durationUnitsHours as readonly string[]).includes(durationUnitLowerCase)
   ) {
     return hoursToMillis(durationAmount)
   }
@@ -57,7 +58,7 @@ export default function toMillis(
    */
 
   if (
-    (durationUnitsMinutes as unknown as string[]).includes(
+    (durationUnitsMinutes as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -69,7 +70,7 @@ export default function toMillis(
    */
 
   if (
-    (durationUnitsSeconds as unknown as string[]).includes(
+    (durationUnitsSeconds as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -81,7 +82,7 @@ export default function toMillis(
    */
 
   if (
-    (durationUnitsMilliseconds as unknown as string[]).includes(
+    (durationUnitsMilliseconds as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -104,18 +105,18 @@ export default function toMillis(
 export function toSeconds(
   durationAmount: number,
   durationUnit:
+    | Capitalize<DurationUnit>
     | DurationUnit
     | Uppercase<DurationUnit>
-    | Capitalize<DurationUnit>
 ): number {
-  const durationUnitLowerCase = durationUnit.toLowerCase() as DurationUnit
+  const durationUnitLowerCase = durationUnit.toLowerCase()
 
   /*
    * Days
    */
 
   if (
-    (durationUnitsDays as unknown as string[]).includes(durationUnitLowerCase)
+    (durationUnitsDays as readonly string[]).includes(durationUnitLowerCase)
   ) {
     return daysToSeconds(durationAmount)
   }
@@ -125,7 +126,7 @@ export function toSeconds(
    */
 
   if (
-    (durationUnitsHours as unknown as string[]).includes(durationUnitLowerCase)
+    (durationUnitsHours as readonly string[]).includes(durationUnitLowerCase)
   ) {
     return hoursToSeconds(durationAmount)
   }
@@ -135,7 +136,7 @@ export function toSeconds(
    */
 
   if (
-    (durationUnitsMinutes as unknown as string[]).includes(
+    (durationUnitsMinutes as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -147,7 +148,7 @@ export function toSeconds(
    */
 
   if (
-    (durationUnitsSeconds as unknown as string[]).includes(
+    (durationUnitsSeconds as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -159,7 +160,7 @@ export function toSeconds(
    */
 
   if (
-    (durationUnitsMilliseconds as unknown as string[]).includes(
+    (durationUnitsMilliseconds as readonly string[]).includes(
       durationUnitLowerCase
     )
   ) {
@@ -178,9 +179,9 @@ export {
   daysToSeconds,
   hoursToMillis,
   hoursToSeconds,
+  millisToSeconds,
   minutesToMillis,
   minutesToSeconds,
-  millisToSeconds,
   secondsToMillis
 } from './calculations.js'
 

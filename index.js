@@ -5,6 +5,7 @@ import { durationUnitsDays, durationUnitsHours, durationUnitsMilliseconds, durat
  * @param durationAmount - Duration amount.
  * @param durationUnit - Duration unit.
  * @returns Total number of milliseconds.
+ * @throws {Error} If the duration unit is unknown.
  */
 export default function toMillis(durationAmount, durationUnit) {
     const durationUnitLowerCase = durationUnit.toLowerCase();
@@ -86,6 +87,6 @@ export function toSeconds(durationAmount, durationUnit) {
      */
     throw new Error(`Unknown durationUnit: ${durationUnit}`);
 }
-export { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, minutesToMillis, minutesToSeconds, millisToSeconds, secondsToMillis } from './calculations.js';
+export { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, millisToSeconds, minutesToMillis, minutesToSeconds, secondsToMillis } from './calculations.js';
 export { millisecondsInOneDay, millisecondsInOneHour, millisecondsInOneMinute, millisecondsInOneSecond, secondsInOneDay, secondsInOneHour, secondsInOneMinute } from './multipliers.js';
 export { durationUnitsDays, durationUnitsHours, durationUnitsMilliseconds, durationUnitsMinutes, durationUnitsSeconds } from './units.js';

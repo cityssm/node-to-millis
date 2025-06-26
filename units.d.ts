@@ -18,4 +18,4 @@ export declare const durationUnitsSeconds: readonly ["seconds", "second", "sec",
  * Acceptable "millisecond" unit values
  */
 export declare const durationUnitsMilliseconds: readonly ["milliseconds", "millisecond", "millis", "milli", "ms"];
-export type DurationUnit = (typeof durationUnitsDays)[number] | (typeof durationUnitsHours)[number] | (typeof durationUnitsMinutes)[number] | (typeof durationUnitsSeconds)[number] | (typeof durationUnitsMilliseconds)[number];
+export type DurationUnit = (typeof durationUnitsDays)[number] | (typeof durationUnitsHours)[number] | (typeof durationUnitsMilliseconds)[number] | (typeof durationUnitsMinutes)[number] | (typeof durationUnitsSeconds)[number];

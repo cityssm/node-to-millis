@@ -32,6 +32,6 @@ export const durationUnitsMilliseconds = [
 export type DurationUnit =
   | (typeof durationUnitsDays)[number]
   | (typeof durationUnitsHours)[number]
+  | (typeof durationUnitsMilliseconds)[number]
   | (typeof durationUnitsMinutes)[number]
   | (typeof durationUnitsSeconds)[number]
-  | (typeof durationUnitsMilliseconds)[number]
