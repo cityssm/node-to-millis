@@ -30,8 +30,8 @@
     "test": "node --test"
   },
   "devDependencies": {
-    "@types/node": "^24.0.4",
-    "eslint-config-cityssm": "^25.0.0",
+    "@types/node": "^24.0.14",
+    "eslint-config-cityssm": "^26.0.0",
     "prettier-config-cityssm": "^1.0.0"
   }
 }
