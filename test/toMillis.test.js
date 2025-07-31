@@ -26,12 +26,15 @@ await describe('to-millis', async () => {
         const expectedMillis = 86_400_000;
         assert.strictEqual(toMillis(days, 'd'), expectedMillis);
     });
-    await it('Handles unknown units', () => {
-        try {
+    await it('Handles unknown units', async () => {
+        await assert.rejects(
+        // eslint-disable-next-line @typescript-eslint/require-await
+        async () => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
             toMillis(1, 'mississippi');
-            assert.fail('Mississippi is not a proper unit');
-        }
-        catch { }
+        }, {
+            name: 'Error'
+        });
     });
 });
 await describe('to-millis/toSeconds', async () => {
@@ -59,11 +62,14 @@ await describe('to-millis/toSeconds', async () => {
         const expectedSeconds = 86_400;
         assert.strictEqual(toSeconds(days, 'd'), expectedSeconds);
     });
-    await it('Handles unknown units', () => {
-        try {
+    await it('Handles unknown units', async () => {
+        await assert.rejects(
+        // eslint-disable-next-line @typescript-eslint/require-await
+        async () => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
             toSeconds(1, 'mississippi');
-            assert.fail('Mississippi is not a proper unit');
-        }
-        catch { }
+        }, {
+            name: 'Error'
+        });
     });
 });

@@ -1,7 +1,7 @@
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
 
-import toMillis, { toSeconds } from '../index.js'
+import toMillis, { type DurationUnit, toSeconds } from '../index.js'
 
 await describe('to-millis', async () => {
   await it('Converts milliseconds to milliseconds', () => {
@@ -38,11 +38,17 @@ await describe('to-millis', async () => {
     assert.strictEqual(toMillis(days, 'd'), expectedMillis)
   })
 
-  await it('Handles unknown units', () => {
-    try {
-      toMillis(1, 'mississippi')
-      assert.fail('Mississippi is not a proper unit')
-    } catch {}
+  await it('Handles unknown units', async () => {
+    await assert.rejects(
+      // eslint-disable-next-line @typescript-eslint/require-await
+      async () => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+        toMillis(1, 'mississippi' as DurationUnit)
+      },
+      {
+        name: 'Error'
+      }
+    )
   })
 })
 
@@ -81,10 +87,16 @@ await describe('to-millis/toSeconds', async () => {
     assert.strictEqual(toSeconds(days, 'd'), expectedSeconds)
   })
 
-  await it('Handles unknown units', () => {
-    try {
-      toSeconds(1, 'mississippi')
-      assert.fail('Mississippi is not a proper unit')
-    } catch {}
+  await it('Handles unknown units', async () => {
+    await assert.rejects(
+      // eslint-disable-next-line @typescript-eslint/require-await
+      async () => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+        toSeconds(1, 'mississippi' as DurationUnit)
+      },
+      {
+        name: 'Error'
+      }
+    )
   })
 })

@@ -101,6 +101,7 @@ export default function toMillis(
  * @param durationAmount - Duration amount.
  * @param durationUnit - Duration unit.
  * @returns Total number of seconds.
+ * @throws {Error} If the duration unit is unknown.
  */
 export function toSeconds(
   durationAmount: number,

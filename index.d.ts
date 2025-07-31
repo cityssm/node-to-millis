@@ -12,6 +12,7 @@ export default function toMillis(durationAmount: number, durationUnit: Capitaliz
  * @param durationAmount - Duration amount.
  * @param durationUnit - Duration unit.
  * @returns Total number of seconds.
+ * @throws {Error} If the duration unit is unknown.
  */
 export declare function toSeconds(durationAmount: number, durationUnit: Capitalize<DurationUnit> | DurationUnit | Uppercase<DurationUnit>): number;
 export { daysToMillis, daysToSeconds, hoursToMillis, hoursToSeconds, millisToSeconds, minutesToMillis, minutesToSeconds, secondsToMillis } from './calculations.js';
